@@ -1,6 +1,6 @@
 # Erebo
 
-Érobo es un sistema de cifrado que funciona usando el sensor de tu camara mientras esta tapada, dentro de la app el script captura el ruido térmico de los electrones en el sensor en completa oscuridad y lo transforma en claves criptográficas para cifrar archivos de forma segura mediante SHA-256.
+Érobo es un sistema de cifrado que funciona usando el sensor de tu camara mientras esta tapada, dentro de la app el script captura el ruido térmico de los electrones que pasan por el sensor en completa oscuridad y lo transforma en claves criptográficas para cifrar archivos de forma segura mediante SHA-256.
 
 ## Instalación Linux
 
