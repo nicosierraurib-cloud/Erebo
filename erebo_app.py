@@ -13,25 +13,20 @@ class EreboApp:
         self.root.geometry("500x350")
         self.root.configure(padx=20, pady=20)
 
-        # Título
-        tk.Label(root, text="🌌 Proyecto Érebo", font=("Arial", 16, "bold")).pack(pady=10)
+        tk.Label(root, text="Érebo", font=("Arial", 16, "bold")).pack(pady=10)
         tk.Label(root, text="Asegúrate de tapar la cámara antes de generar la clave.").pack()
 
-        # Input de Texto
         tk.Label(root, text="Texto a encriptar/desencriptar:").pack(anchor="w", pady=(10,0))
         self.text_input = tk.Entry(root, width=50)
         self.text_input.pack(pady=5)
 
-        # Botones de Texto
         frame_text_btns = tk.Frame(root)
         frame_text_btns.pack(pady=5)
         tk.Button(frame_text_btns, text="Cifrar Texto", command=self.encrypt_text).pack(side=tk.LEFT, padx=5)
         tk.Button(frame_text_btns, text="Descifrar Texto", command=self.decrypt_text).pack(side=tk.LEFT, padx=5)
 
-        # Separador
         tk.Frame(root, height=2, bd=1, relief=tk.SUNKEN).pack(fill=tk.X, pady=15)
 
-        # Botones de Archivo
         tk.Label(root, text="Cifrado de Archivos (Sobrescribe el archivo original):").pack(anchor="w")
         frame_file_btns = tk.Frame(root)
         frame_file_btns.pack(pady=5)
@@ -39,7 +34,6 @@ class EreboApp:
         tk.Button(frame_file_btns, text="Descifrar Archivo", command=self.decrypt_file).pack(side=tk.LEFT, padx=5)
 
     def _get_camera_key(self):
-        """Abre la cámara, captura el ruido oscuro y devuelve una clave Fernet válida."""
         cap = cv2.VideoCapture(0)
         if not cap.isOpened():
             messagebox.showerror("Error", "No se pudo acceder a la cámara.")
@@ -49,10 +43,8 @@ class EreboApp:
         cap.release()
 
         if ret:
-            # Triturar los bytes de la imagen con SHA-256
             raw_bytes = frame.tobytes()
             key_bytes = hashlib.sha256(raw_bytes).digest()
-            # Fernet requiere una clave en base64 url-safe de 32 bytes
             return base64.urlsafe_b64encode(key_bytes)
         else:
             messagebox.showerror("Error", "No se pudo leer el sensor.")
