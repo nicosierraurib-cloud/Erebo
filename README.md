@@ -9,7 +9,7 @@ Para evitar problemas con los entornos virtuales, instala las dependencias gráf
 ```bash
 sudo pacman -S python-opencv python-cryptography tk
 ```
-Notas: 
+Nota: 
 Tapa completamente la lente de tu cámara web. Si dejas entrar luz, el sistema usará patrones estructurados en lugar de ruido térmico, lo que debilita severamente la clave generada.
 
 Ejecuta la interfaz gráfica:
