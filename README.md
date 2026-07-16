@@ -1,7 +1,10 @@
 # Erebo
 
 Erebo es un sistema de cifrado que funciona usando el sensor de tu camara mientras esta tapada, dentro de la app el script captura el ruido térmico de los electrones que pasan por el sensor en completa oscuridad y lo transforma en claves criptográficas para cifrar archivos de forma segura mediante SHA-256.
-
+## Instalacion en Windows
+```bash
+pip install --user pillow opencv-python cryptography
+```
 ## Instalación Linux
 
 Para evitar problemas con los entornos virtuales, instala las dependencias gráficas y de criptografía directamente desde los repositorios oficiales de pacman:
@@ -9,13 +12,16 @@ Para evitar problemas con los entornos virtuales, instala las dependencias gráf
 ```bash
 sudo pacman -S python-opencv python-cryptography tk
 ```
+```bash
+sudo pacman -S python-pillow python-opencv python-cryptography
+```
 Nota: 
 Tapa completamente la lente de tu cámara web. Si dejas entrar luz, el sistema usará patrones estructurados en lugar de ruido térmico, lo que debilita severamente la clave generada.
 
 Ejecuta la interfaz gráfica:
 
 ```bash
-python erebo_app.py
+python main.py
 ```
 Puedes introducir texto o seleccionar un archivo de tu sistema.
 
