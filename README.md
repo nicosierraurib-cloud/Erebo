@@ -19,7 +19,7 @@ python erebo_app.py
 ```
 Puedes introducir texto o seleccionar un archivo de tu sistema.
 
-Al hacer clic en "Cifrar", Érebo leerá el sensor y te entregará una clave alfanumérica en pantalla.
+Al hacer clic en "Cifrar", Erebo leerá el sensor y te entregará una clave alfanumérica en pantalla.
 
 ⚠️ No cifre el archivo mas de una vez ⚠️
 
